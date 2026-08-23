@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Catalog</title>
+</head>
+<body>
+
+    <h1>Online Store - Product Catalog</h1>
+
+    <!-- Product table with Name, Description, Price, Availability columns -->
+    <table border="1" cellpadding="8">
+        <caption>Featured Products</caption>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Wireless Headphones</td>
+                <td>Over-ear headphones with noise cancellation and 20-hour battery life.</td>
+                <td><img src="https://via.placeholder.com/80" alt="Wireless Headphones" width="80" height="80"></td>
+                <td>$59.99</td>
+                <td>In Stock</td>
+            </tr>
+            <tr>
+                <td>Smart Watch</td>
+                <td>Fitness tracking smart watch with heart rate monitor.</td>
+                <td><img src="https://via.placeholder.com/80" alt="Smart Watch" width="80" height="80"></td>
+                <td>$89.99</td>
+                <td>In Stock</td>
+            </tr>
+            <tr>
+                <td>Bluetooth Speaker</td>
+                <td>Portable speaker with deep bass and waterproof design.</td>
+                <td><img src="https://via.placeholder.com/80" alt="Bluetooth Speaker" width="80" height="80"></td>
+                <td>$39.99</td>
+                <td>Out of Stock</td>
+            </tr>
+
+            <!-- Row demonstrating rowspan: two variants of the same product -->
+            <tr>
+                <td rowspan="2">Laptop Stand</td>
+                <td>Aluminum, adjustable height, silver color.</td>
+                <td><img src="https://via.placeholder.com/80" alt="Laptop Stand Silver" width="80" height="80"></td>
+                <td>$24.99</td>
+                <td>In Stock</td>
+            </tr>
+            <tr>
+                <td>Aluminum, adjustable height, black color.</td>
+                <td><img src="https://via.placeholder.com/80" alt="Laptop Stand Black" width="80" height="80"></td>
+                <td>$24.99</td>
+                <td>In Stock</td>
+            </tr>
+
+            <!-- Row demonstrating colspan: promotional note spanning multiple columns -->
+            <tr>
+                <td colspan="5">All prices are inclusive of applicable taxes. Free shipping on orders over $50.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
