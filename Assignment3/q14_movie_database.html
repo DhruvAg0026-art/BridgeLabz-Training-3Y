@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Database</title>
+</head>
+<body>
+
+    <h1>Movie Database</h1>
+
+    <!-- Movie table with caption, attributes, and colspan -->
+    <table border="1" title="Table listing popular movies and their details">
+        <caption>Top Rated Movies</caption>
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Genre</th>
+                <th>Year</th>
+                <th>IMDB Rating</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td title="Science fiction epic">Interstellar</td>
+                <td>Sci-Fi</td>
+                <td>2014</td>
+                <td>8.7</td>
+                <td><a href="https://www.imdb.com/" title="View on IMDB">View</a></td>
+            </tr>
+            <tr>
+                <td title="Psychological thriller">Inception</td>
+                <td>Thriller</td>
+                <td>2010</td>
+                <td>8.8</td>
+                <td><a href="https://www.imdb.com/" title="View on IMDB">View</a></td>
+            </tr>
+            <tr>
+                <td title="Crime drama classic">The Godfather</td>
+                <td>Crime</td>
+                <td>1972</td>
+                <td>9.2</td>
+                <td><a href="https://www.imdb.com/" title="View on IMDB">View</a></td>
+            </tr>
+
+            <!-- Row spanning all columns using colspan -->
+            <tr>
+                <td colspan="5">More titles will be added to this database soon.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Note at the bottom -->
+    <p><small>Ratings sourced from IMDB and are subject to change over time.</small></p>
+
+</body>
+</html>
