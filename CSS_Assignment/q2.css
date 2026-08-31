@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    color: #1f2937;
+    background: #f9fafb;
+}
+
+header {
+    background: #0f172a;
+    color: #fff;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.top-nav h1 {
+    font-size: 2rem;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    width: 100%;
+    min-height: 300px;
+    padding: 3rem 5%;
+}
+
+.hero-section,
+.image-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.parallax-one {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1400&q=80');
+}
+
+.parallax-two {
+    background-image: radial-gradient(circle, rgba(251,191,36,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1400&q=80');
+}
+
+.content-box {
+    background: rgba(14, 116, 144, 0.45);
+    padding: 2rem 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    max-width: 600px;
+}
+
+.content-box h2,
+.inner h2 {
+    margin-bottom: 0.8rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.light-bg {
+    background: #fef3c7;
+    border-top: 3px solid #d97706;
+    border-bottom: 3px solid #d97706;
+}
+
+.gradient-section {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe, #c7d2fe);
+}
+
+.dark-section {
+    background: #111827;
+    color: white;
+}
+
+footer {
+    background: #020617;
+    color: #fff;
+    text-align: center;
+    padding: 1.2rem;
+}
