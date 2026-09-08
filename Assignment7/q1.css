@@ -1,0 +1,11 @@
+/* Flexbox keeps the border examples in a responsive row. */
+* { box-sizing: border-box; }
+:root { --ink: #183642; --paper: #f4efe6; --accent: #df6844; }
+body { min-height: 100vh; margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 Georgia, serif; }
+header, main, footer { max-width: 1100px; margin: auto; padding: 2rem 6vw; }
+h1 { margin: .2rem 0; font-size: clamp(2rem, 5vw, 4rem); } .kicker { color: var(--accent); font: 700 .75rem/1.2 Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+.box-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.4rem; }
+.demo { flex: 1 1 210px; min-height: 180px; padding: 1rem; background: #fffaf2; border: 5px solid var(--ink); transition: border-color .3s ease, transform .3s ease; }
+.demo:hover { border-color: var(--accent); transform: translateY(-5px); } .demo h2 { margin-top: 0; font-size: 1.2rem; }
+.dashed { border-style: dashed; padding: 1.5rem; } .double { border-style: double; padding: 2rem; } .groove { border-style: groove; padding: .75rem; }
+.rounded { border-radius: 24px; } .pill { border-radius: 100px; } footer { color: #53666d; text-align: center; }

@@ -1,0 +1,8 @@
+/* The row centers differently sized boxes on both axes. */
+* { box-sizing: border-box; }
+:root { --ink: #1e293b; --blue: #5aa9e6; --green: #8acb88; --gold: #f6bd60; }
+body { min-height: 100vh; margin: 0; background: #eef4f1; color: var(--ink); font: 1rem/1.5 Arial, sans-serif; }
+.layout { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 2rem 6vw; } header { text-align: center; } h1 { margin: .25rem 0; font-size: clamp(2rem, 5vw, 3.8rem); } .kicker { color: #387d7a; font-weight: bold; letter-spacing: .12em; text-transform: uppercase; }
+.size-row { display: flex; align-items: center; justify-content: center; gap: 1.25rem; min-height: 45vh; } .size-box { display: grid; place-content: center; padding: 1rem; color: #16324f; text-align: center; border-radius: 14px; }
+.size-box h2 { margin: 0 0 .5rem; } .px-box { width: 280px; height: 180px; background: var(--blue); } .percent-box { width: 28%; min-height: 220px; background: var(--green); } .viewport-box { width: 18em; height: 18vh; max-width: 18em; overflow: auto; background: var(--gold); }
+@media (max-width: 700px) { .size-row { flex-direction: column; } .percent-box { width: min(70vw, 280px); } }
