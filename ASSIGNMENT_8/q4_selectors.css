@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+/* Element selector: establishes the page's readable base. */
+body { max-width: 900px; margin: 0 auto; padding: 42px 24px; color: #263238; font-family: Arial, sans-serif; line-height: 1.6; background: #f7f4ef; }
+/* Element selector: styles all headings consistently. */
+h1, h2 { font-family: Georgia, serif; } h1 { font-size: clamp(2.3rem, 6vw, 4.5rem); } header p { color: #aa4d31; font-size: .75rem; font-weight: 700; letter-spacing: .15em; }
+/* Class selector: reusable visual treatment. */
+.note { padding: 12px 16px; border-left: 4px solid #d68b36; background: #fff2d9; }
+/* ID selector: targets one unique section. */
+#identity { padding: 24px; border: 1px solid #bfd0d5; background: #e8f2f3; }
+/* Attribute selector: targets links that have href values. */
+a[href] { color: #176b78; font-weight: 700; } a[href^="https"] { color: #aa4d31; }
+/* Child combinator: styles only direct list children. */
+.relationships > ul { padding: 18px 18px 18px 38px; border: 2px solid #176b78; }
+/* Descendant combinator: targets list items inside relationships. */
+.relationships li { margin: 5px 0; }
+/* Adjacent sibling combinator: paragraph immediately after the list. */
+ul + p { color: #176b78; font-weight: 700; }
+/* General sibling combinator: all later paragraphs after the list. */
+ul ~ p { padding-left: 12px; border-left: 3px solid #d68b36; }
+section { margin: 24px 0; padding: 22px; background: white; box-shadow: 0 8px 18px #26323812; } footer { margin-top: 30px; color: #64747a; text-align: center; }

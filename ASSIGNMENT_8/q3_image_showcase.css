@@ -1,0 +1,6 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 42px 24px; color: #26352c; font-family: Georgia, serif; background: #edf2ed; }
+header { max-width: 1100px; margin: 0 auto 30px; } header p { color: #a94b31; font: 700 .75rem Arial, sans-serif; letter-spacing: .15em; } h1 { margin: 8px 0; font-size: clamp(2.5rem, 7vw, 5rem); }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1100px; margin: auto; }
+figure { margin: 0; overflow: hidden; border-radius: 12px; background: #fff; box-shadow: 0 12px 25px #26352c20; } .image-wrap { position: relative; overflow: hidden; aspect-ratio: 3 / 2; } .image-wrap::after { content: ""; position: absolute; inset: 0; background: #10181466; opacity: 0; transition: opacity .3s ease; } img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; } figure:hover img { transform: scale(1.1); } figure:hover .image-wrap::after { opacity: 1; } figcaption { padding: 15px 17px; font-size: 1.1rem; }
+@media (max-width: 700px) { .gallery { grid-template-columns: 1fr; max-width: 480px; } }
