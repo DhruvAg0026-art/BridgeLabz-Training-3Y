@@ -1,0 +1,4 @@
+body { background: #f4f7fb; color: #14213d; }
+.exercise-link { display: block; padding: 1.2rem 1.4rem; border: 1px solid #dce3ee; border-radius: .5rem; color: inherit; background: #fff; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+.exercise-link:hover { color: #0d6efd; transform: translateY(-3px); box-shadow: 0 .5rem 1rem #14213d16; }
+.exercise-link strong { display: inline-block; width: 2.4rem; color: #0d6efd; }

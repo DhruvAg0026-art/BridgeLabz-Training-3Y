@@ -1,0 +1,1 @@
+body { min-height: 100vh; background: #f3f6fb; color: #1e293b; } .card { border: 0; border-radius: 1rem; transition: transform .25s ease, box-shadow .25s ease; } .card:hover { transform: translateY(-8px); box-shadow: 0 1rem 2rem #1e293b1f !important; } .featured { box-shadow: 0 .75rem 1.5rem #0d6efd3d; }

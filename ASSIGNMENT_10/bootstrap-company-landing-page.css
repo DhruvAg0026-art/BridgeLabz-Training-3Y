@@ -1,0 +1,1 @@
+body { color: #17233c; } .navbar-brand span { color: #0d6efd; } .hero { background: linear-gradient(120deg, #eef5ff, #fff); } .hero h1 { max-width: 680px; letter-spacing: -.04em; } .hero img { min-height: 320px; object-fit: cover; } @media (max-width: 576px) { .hero h1 { font-size: 3.25rem; } }

@@ -1,0 +1,1 @@
+body { background: #f7f7f5; } .product-card { border: 0; transition: transform .25s ease, box-shadow .25s ease; } .product-card:hover { transform: translateY(-6px); box-shadow: 0 1rem 2rem #15202b20 !important; } .product-card img { height: 220px; object-fit: cover; }
