@@ -1,0 +1,376 @@
+Section A: Multiple-Choice Questions
+
+Q1. What will be the output?
+● A. null, number, array
+ans ● B. object, number, object
+● C. object, NaN, array
+● D. undefined, number, object
+
+console.log(typeof null);      // "object"
+console.log(typeof NaN);        // "number"
+console.log(typeof []);          // "object"
+
+Reason: typeof null is a legacy JavaScript quirk, NaN is a number, and arrays are objects in JavaScript.
+
+Q2. Predict the output.
+● A. 205, 200, 24
+● B. 205, 200, NaN
+● C. NaN, 200, NaN
+● D. 2203, 403203, 24
+Actual output:
+console.log(2 + "203");      // "2203"
+console.log(403 - "203");     // 200
+console.log(2 * "12abc");     // NaN
+
+So none of the provided options exactly match. The correct result is: 2203, 200, NaN.
+
+Q3. Which statement about let, const, and var is correct?
+● A. var is block-scoped.
+● B. let can be redeclared in the same scope without error.
+● C. A const object cannot have its properties modified.
+ans ● D. let and const are block-scoped, while var is function-scoped.
+
+- var -> function scoped
+- let -> block scoped
+- const -> block scoped
+
+Q4. What is the output?
+● A. Pass, Eligible
+ans ● B. Pass, followed by a ReferenceError
+● C. ReferenceError, ReferenceError
+● D. undefined, undefined
+
+let score = 12;
+if (score > 10) {
+  var result = "Pass";
+  let status = "Eligible";
+}
+console.log(result);   // Pass
+console.log(status);   // ReferenceError
+
+Reason: result is declared with var and is accessible outside the if block, but status is declared with let and is block-scoped.
+
+Q5. Which loop is most suitable when you need to iterate over the values of an array?
+● A. for...in
+ans ● B. for...of
+● C. if...else
+● D. switch
+
+for...of is used to iterate over values of arrays, strings, and other iterable objects.
+
+Q6. What is the main difference between return and console.log() inside a function?
+● A. Both return values to the caller.
+● B. console.log() returns the calculated result.
+ans ● C. return sends a value back to the caller; console.log() displays a value.
+● D. return can only be used in arrow functions.
+
+- return gives the result to the caller of the function.
+- console.log() just prints to the console; it does not return a value to the function caller.
+
+Q7. What does the rest parameter do in this function?
+● A. Converts all arguments into a string.
+ans ● B. Collects the arguments into an array.
+● C. Expands an existing array into arguments.
+● D. Allows only one argument.
+
+function calculateTotal(...prices) {
+  return prices.length;
+}
+
+The rest parameter collects all arguments passed into an array named prices.
+
+Q8. Which statement about arrow functions and “this” is correct?
+● A. Arrow functions always bind this to the object that calls them.
+● B. Regular functions always bind this to the object in which they are defined.
+ans ● C. Arrow functions inherit this from their surrounding lexical context.
+● D. Arrow functions cannot access object properties.
+
+Arrow functions do not create their own this; they use the this of the surrounding scope.
+
+Section B: Predict the Output
+
+Q9. Operators and type coercion
+
+console.log("5" + 2);     // "52"
+console.log("5" - 2);     // 3
+console.log(true + 2);    // 3
+console.log(Boolean("false")); // true
+
+Explanation:
+- "5" + 2 => string concatenation because + with a string converts 2 to a string.
+- "5" - 2 => subtraction converts the string to number 5.
+- true + 2 => true is treated as 1, so 1 + 2 = 3.
+- Boolean("false") => true because any non-empty string is truthy.
+
+Q10. Scope and variable declarations
+
+var amount = 100;
+function calculate() {
+  var amount = 200;
+  let discount = 20;
+
+  if (true) {
+    var amount = 300;
+    let discount = 50;
+    console.log(amount, discount); // 300 50
+  }
+
+  console.log(amount, discount); // ReferenceError
+}
+
+calculate();
+console.log(amount); // 100
+
+Output order:
+300 50
+ReferenceError
+
+Explanation:
+- amount uses var, so it is function-scoped. The inner var amount = 300 reassigns the same variable.
+- discount uses let, so it is block-scoped. The discount inside the if block is different from the discount outside it.
+- The line `console.log(amount, discount);` outside the if block uses the outer `discount` declared by let, which is not available inside the if block, so it throws a ReferenceError.
+
+Q11. Functions and return values
+
+function calculatePrice(price, quantity) {
+  console.log(price * quantity);
+}
+
+const result = calculatePrice(100, 3);
+console.log(result);
+
+Output:
+300
+undefined
+
+Explanation:
+- The function prints 300 with console.log(), but it does not return a value.
+- So result gets undefined.
+
+Corrected version:
+function calculatePrice(price, quantity) {
+  return price * quantity;
+}
+
+const result = calculatePrice(100, 3);
+console.log(result); // 300
+
+Q12. Array mutation
+
+const products = ["Milk", "Bread", "Rice"];
+products[1] = "Eggs";
+products.push("Oil");
+console.log(products); // ["Milk", "Eggs", "Rice", "Oil"]
+console.log(products.length); // 4
+
+Explanation:
+const prevents reassignment of the variable itself, not modification of the array contents. Arrays are mutable objects.
+
+Q13. Object methods and this
+
+const employee = {
+  name: "Aman",
+  salary: 30000,
+  showDetails() {
+    console.log(this.name, this.salary);
+  }
+};
+
+employee.showDetails();
+
+Output:
+Aman 30000
+
+Explanation:
+When `showDetails()` is called as `employee.showDetails()`, `this` refers to the employee object.
+
+Q14. Rest parameters and spread syntax
+
+function addNumbers(...numbers) {
+  return numbers.length;
+}
+
+const values = [10, 20, 30, 40];
+console.log(addNumbers(values));     // 1
+console.log(addNumbers(...values));  // 4
+
+Explanation:
+- `addNumbers(values)` passes one argument: the whole array.
+- `addNumbers(...values)` spreads the array into four separate arguments: 10, 20, 30, 40.
+
+Section C: Debug the Code
+
+Q15. Fix the variable scope issue
+
+Original code:
+if (true) {
+  let message = "Order placed successfully";
+}
+
+console.log(message);
+
+Error: ReferenceError
+
+Reason:
+message is declared with let inside the if block, so it exists only inside that block and cannot be accessed outside it.
+
+Correct code:
+let message = "Order placed successfully";
+if (true) {
+  console.log(message);
+}
+console.log(message);
+
+Output:
+Order placed successfully
+Order placed successfully
+
+Q16. Fix the shopping cart calculation
+
+Original code:
+function calculateCartTotal(...prices) {
+  let total = 0;
+  for (let i = 0; i <= prices.length; i++) {
+    total += prices[i];
+  }
+  return total;
+}
+console.log(calculateCartTotal(100, 200, 300));
+
+Problem:
+The loop condition is `i <= prices.length`, which runs once too many times. At `i = prices.length`, `prices[i]` is `undefined`.
+
+Correct code:
+function calculateCartTotal(...prices) {
+  let total = 0;
+  for (let i = 0; i < prices.length; i++) {
+    total += prices[i];
+  }
+  return total;
+}
+
+console.log(calculateCartTotal(100, 200, 300)); // 600
+
+Q17. Fix the object method
+
+const user = {
+  userName: "Rahul",
+  showName: () => {
+    console.log(this.userName);
+  }
+};
+
+user.showName();
+
+Problem:
+Arrow functions do not have their own this. They inherit this from the surrounding lexical scope, which is not the user object in this case.
+
+Correct code:
+const user = {
+  userName: "Rahul",
+  showName() {
+    console.log(this.userName);
+  }
+};
+
+user.showName(); // Rahul
+
+When arrow functions are appropriate:
+- When you want to preserve the surrounding this value inside callbacks or event handlers.
+- Example: array map/filter callbacks, setTimeout inside class methods, or React event handlers.
+
+Q18. Type Coercion — Predict the Output
+
+console.log([] + []);        // ""
+console.log([] + {});        // "[object Object]"
+console.log("5" - - "2");  // 7
+console.log(null + 1);       // 1
+
+Explanation:
+- [] + [] => both arrays become empty strings and concatenate to "".
+- [] + {} => [] becomes "" and {} becomes "[object Object]"; result is "[object Object]".
+- "5" - - "2" => unary minus converts "2" to -2, so expression becomes 5 - (-2) = 7.
+- null + 1 => null becomes 0, so 0 + 1 = 1.
+
+Q19. Scope and Hoisting
+
+console.log(a);
+var a = 10;
+
+console.log(b);
+let b = 20;
+
+Output:
+undefined
+ReferenceError
+
+Explanation:
+- `var a` is hoisted to the top of its scope and initialized to undefined. So `console.log(a)` prints undefined.
+- `let b` is also hoisted, but it is placed in the Temporal Dead Zone (TDZ) until its declaration is executed. Accessing it before initialization throws a ReferenceError.
+
+Temporal Dead Zone (TDZ):
+- The TDZ is the period between hoisting and initialization where let/const variables cannot be accessed.
+- This prevents use before declaration and helps catch bugs earlier.
+
+JavaScript Interview-Level Questions
+
+1. Difference between == and ===
+`==` compares after type coercion.
+`===` compares both value and type without coercion.
+
+Example:
+5 == "5" // true
+5 === "5" // false
+
+2. Difference between undefined and null
+undefined means a variable has been declared but no value assigned, or a property does not exist.
+null means an intentional empty value.
+
+3. Difference between for...in and for...of
+for...in iterates over keys/indexes.
+for...of iterates over values of an iterable object like an array.
+
+4. Can a function return another function?
+Yes.
+
+Example:
+function multiplier(factor) {
+  return function (value) {
+    return factor * value;
+  };
+}
+
+const double = multiplier(2);
+console.log(double(5)); // 10
+
+Use case: creating reusable closures, factory functions, and higher-order functions.
+
+5. What happens if a function has no explicit return statement?
+It returns undefined by default.
+
+6. Difference between passing a primitive value and passing an object to a function
+Primitive values are passed by value, so changes inside the function do not affect the original value.
+Objects are passed by reference, so changes to object properties inside the function affect the original object.
+
+7. Difference between shallow copy and deep copy
+Shallow copy copies only the top-level properties. Nested objects are still shared.
+Deep copy creates a fully independent duplicate of all nested objects and arrays.
+
+8. Why is NaN !== NaN true?
+Because NaN is a special value defined by the IEEE 754 standard, and it is not equal to itself.
+
+9. Difference between function declarations and function expressions regarding hoisting
+Function declarations are hoisted fully and can be called before declaration.
+Function expressions are not hoisted in the same way; the variable is hoisted but not initialized until the assignment line runs.
+
+10. When would you use an arrow function instead of a regular function?
+Use arrow functions when:
+- you want shorter syntax,
+- you want to keep the lexical this value,
+- you are writing callbacks.
+
+Avoid arrow functions when:
+- you need your own this,
+- you need a constructor,
+- you need method definitions inside objects.
+
