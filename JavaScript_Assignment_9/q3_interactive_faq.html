@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q3 - Interactive FAQ</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f6fa; margin: 0; }
+    header, main { max-width: 750px; margin: 0 auto; padding: 16px; }
+    .faq-item { background: #fff; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd; overflow: hidden; }
+    .question { margin: 0; padding: 14px 16px; cursor: pointer; background: #fff; user-select: none; }
+    .answer { display: none; padding: 12px 16px; border-top: 1px solid #eee; }
+    .answer input { padding: 8px; width: 70%; border: 1px solid #999; border-radius: 4px; }
+    .hint { color: #666; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Frequently Asked Questions</h1>
+    <p class="hint">Click a question to toggle its answer. Double-click any question to collapse all answers.</p>
+  </header>
+
+  <main>
+    <section aria-label="FAQ list">
+      <article class="faq-item">
+        <h3 class="question">1. How do I create an account?</h3>
+        <div class="answer"><p>Click "Sign Up", fill in your details and verify your email.</p>
+          <input type="text" placeholder="Leave a comment..."></div>
+      </article>
+
+      <article class="faq-item">
+        <h3 class="question">2. How can I reset my password?</h3>
+        <div class="answer"><p>Use the "Forgot password" link on the login page to receive a reset email.</p>
+          <input type="text" placeholder="Leave a comment..."></div>
+      </article>
+
+      <article class="faq-item">
+        <h3 class="question">3. What payment methods are supported?</h3>
+        <div class="answer"><p>We accept UPI, credit/debit cards, net banking and cash on delivery.</p>
+          <input type="text" placeholder="Leave a comment..."></div>
+      </article>
+
+      <article class="faq-item">
+        <h3 class="question">4. How long does delivery take?</h3>
+        <div class="answer"><p>Standard delivery takes 3-5 business days. Express takes 1-2 days.</p>
+          <input type="text" placeholder="Leave a comment..."></div>
+      </article>
+
+      <article class="faq-item">
+        <h3 class="question">5. What is the return policy?</h3>
+        <div class="answer"><p>You can return any item within 7 days of delivery for a full refund.</p>
+          <input type="text" placeholder="Leave a comment..."></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q3_interactive_faq.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q4 - Special Offer Banner</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f2f2; margin: 0; }
+    header, main { max-width: 800px; margin: 0 auto; padding: 16px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; align-items: center; }
+    button, select { padding: 8px 14px; border-radius: 6px; border: 1px solid #888; font-size: .95rem; }
+    button { background: #6a1b9a; color: #fff; border: none; cursor: pointer; }
+    .banner { padding: 24px; margin-bottom: 10px; border-radius: 10px; color: #fff; font-size: 1.2rem; text-align: center; }
+    #b1 { background: #e53935; } #b2 { background: #1e88e5; } #b3 { background: #43a047; }
+    #b4 { background: #fb8c00; } #b5 { background: #8e24aa; }
+    #rotator { position: relative; height: 110px; }
+    .slide { position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
+             color: #fff; font-size: 1.4rem; border-radius: 10px; }
+    .slide:first-child { display: flex; }
+    .s1 { background: #00897b; } .s2 { background: #3949ab; } .s3 { background: #c62828; }
+    .s4 { background: #f9a825; color: #222; } .s5 { background: #455a64; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Special Offers</h1>
+  </header>
+
+  <main>
+    <section aria-label="Banner controls">
+      <h2>Banner Controls</h2>
+      <div class="controls">
+        <label for="target">Target banner:</label>
+        <select id="target">
+          <option value="all">All banners</option>
+          <option value="b1">Banner 1</option>
+          <option value="b2">Banner 2</option>
+          <option value="b3">Banner 3</option>
+          <option value="b4">Banner 4</option>
+          <option value="b5">Banner 5</option>
+        </select>
+        <button id="hideBtn">Hide</button>
+        <button id="showBtn">Show</button>
+        <button id="slideUpBtn">Slide Up</button>
+        <button id="slideDownBtn">Slide Down</button>
+        <button id="fadeOutBtn">Fade Out</button>
+        <button id="fadeInBtn">Fade In</button>
+      </div>
+
+      <article class="banner" id="b1">Flat 50% off on Electronics</article>
+      <article class="banner" id="b2">Free delivery on orders above Rs. 499</article>
+      <article class="banner" id="b3">Buy 1 Get 1 Free on Fashion</article>
+      <article class="banner" id="b4">Extra 10% cashback with UPI</article>
+      <article class="banner" id="b5">Festive Sale starts tonight!</article>
+    </section>
+
+    <section aria-label="Rotating banner">
+      <h2>Auto-rotating Banner (every 5 seconds)</h2>
+      <div id="rotator">
+        <div class="slide s1">Mega Electronics Sale</div>
+        <div class="slide s2">New Arrivals in Fashion</div>
+        <div class="slide s3">Hot Deals: Up to 70% Off</div>
+        <div class="slide s4">Grocery Savings Week</div>
+        <div class="slide s5">Join Prime for Free Shipping</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q4_special_offer_banner.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q6 - Event Subscription Panel</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f7fa; margin: 0; }
+    header, main { max-width: 700px; margin: 0 auto; padding: 16px; }
+    section { background: #fff; padding: 16px; border-radius: 10px; margin-bottom: 14px; border: 1px solid #ddd; }
+    button { padding: 8px 14px; border: none; border-radius: 6px; cursor: pointer; color: #fff; background: #1565c0; }
+    #unsubscribeBtn { background: #c62828; }
+    .remove { background: #757575; padding: 4px 10px; float: right; }
+    input { padding: 8px; border: 1px solid #999; border-radius: 6px; }
+    #status { display: inline-block; padding: 4px 12px; border-radius: 12px; font-weight: bold; background: #ffcdd2; color: #b71c1c; }
+    #status.on { background: #c8e6c9; color: #1b5e20; }
+    #topicList { list-style: none; padding: 0; }
+    .topic { padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 6px; cursor: pointer; }
+    .topic.active { background: #bbdefb; border-color: #1565c0; }
+    .msg { padding: 8px 12px; margin-bottom: 6px; border-radius: 6px; background: #e8f5e9; color: #1b5e20; border-left: 4px solid #2e7d32; }
+    .msg.warn { background: #fff3e0; color: #e65100; border-left-color: #e65100; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Event Subscription Panel</h1>
+  </header>
+
+  <main>
+    <section aria-label="Notifications">
+      <h2>Notifications: <span id="status">OFF</span></h2>
+      <button id="subscribeBtn">Subscribe</button>
+      <button id="unsubscribeBtn">Unsubscribe</button>
+    </section>
+
+    <section aria-label="Topics">
+      <h2>Subscription Topics</h2>
+      <p>Click a topic to toggle your subscription to it.</p>
+      <ul id="topicList">
+        <li class="topic"><span class="topic-name">Tech News</span><button class="remove">Remove</button></li>
+        <li class="topic"><span class="topic-name">Sports Updates</span><button class="remove">Remove</button></li>
+        <li class="topic"><span class="topic-name">Music Events</span><button class="remove">Remove</button></li>
+        <li class="topic"><span class="topic-name">Movie Releases</span><button class="remove">Remove</button></li>
+        <li class="topic"><span class="topic-name">Food Festivals</span><button class="remove">Remove</button></li>
+      </ul>
+      <form id="addTopicForm">
+        <input type="text" id="newTopic" placeholder="New topic name">
+        <button type="submit">Add Topic</button>
+      </form>
+    </section>
+
+    <section aria-label="Messages">
+      <h2>Messages</h2>
+      <div id="messages" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q6_event_subscription_panel.js"></script>
+</body>
+</html>

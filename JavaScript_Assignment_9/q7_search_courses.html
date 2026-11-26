@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q7 - Search Courses</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f6f8; margin: 0; }
+    header, main { max-width: 750px; margin: 0 auto; padding: 16px; }
+    .search-bar { display: flex; gap: 8px; }
+    #searchInput { flex: 1; padding: 10px; font-size: 1rem; border: 1px solid #888; border-radius: 6px; }
+    button { padding: 10px 16px; border: none; background: #ef6c00; color: #fff; border-radius: 6px; cursor: pointer; }
+    #courseList { list-style: none; padding: 0; }
+    .course { background: #fff; border: 1px solid #ddd; padding: 12px 16px; border-radius: 8px; margin-bottom: 8px; }
+    .course h3 { margin: 0 0 4px; }
+    .course p { margin: 0; color: #555; font-size: .9rem; }
+    #count { font-weight: bold; margin: 12px 0; }
+    #noResult { display: none; color: #c62828; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Search Courses</h1>
+    <form class="search-bar" role="search" onsubmit="return false;">
+      <input type="text" id="searchInput" placeholder="Search courses (e.g. java, web, python)" autocomplete="off">
+      <button type="button" id="clearBtn">Clear</button>
+    </form>
+  </header>
+
+  <main>
+    <p id="count" aria-live="polite"></p>
+    <p id="noResult">No courses match your search.</p>
+    <section aria-label="Course list">
+      <ul id="courseList">
+        <li class="course"><h3 class="title">JavaScript for Beginners</h3><p>Instructor: Amit Verma | 20 hours</p></li>
+        <li class="course"><h3 class="title">Advanced Java Programming</h3><p>Instructor: Neha Gupta | 35 hours</p></li>
+        <li class="course"><h3 class="title">Python for Data Science</h3><p>Instructor: Rohan Das | 40 hours</p></li>
+        <li class="course"><h3 class="title">Web Design with HTML and CSS</h3><p>Instructor: Priya Singh | 25 hours</p></li>
+        <li class="course"><h3 class="title">React JS Complete Guide</h3><p>Instructor: Karan Shah | 30 hours</p></li>
+        <li class="course"><h3 class="title">MySQL Database Mastery</h3><p>Instructor: Sunita Rao | 18 hours</p></li>
+        <li class="course"><h3 class="title">Machine Learning Basics</h3><p>Instructor: Vivek Jain | 45 hours</p></li>
+        <li class="course"><h3 class="title">Node.js Backend Development</h3><p>Instructor: Alok Mishra | 28 hours</p></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q7_search_courses.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q1 - Welcome Page Greeting</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; margin: 0; color: #222; }
+    header, main, footer { max-width: 700px; margin: 0 auto; padding: 20px; }
+    header { text-align: center; }
+    #greeting { cursor: pointer; font-size: 2rem; padding: 20px; background: #fff; border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+    #greeting:hover { background: #e8f0fe; }
+    .controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+    button, input { padding: 10px 16px; border-radius: 6px; border: 1px solid #888; font-size: 1rem; }
+    button { background: #1a73e8; color: #fff; border: none; cursor: pointer; }
+    button:hover { background: #1558b0; }
+    #welcomeMessage { background: #fff; padding: 20px; border-left: 5px solid #1a73e8; border-radius: 6px; }
+    .note { font-size: .85rem; color: #666; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Website</h1>
+    <h2 id="greeting" title="Click me!">Loading...</h2>
+    <p class="note">(Click on the greeting to see an alert)</p>
+  </header>
+
+  <main>
+    <!-- Scenario: personalised name -->
+    <section class="controls" aria-label="Personalise">
+      <input type="text" id="nameInput" placeholder="Enter your name">
+      <button id="setNameBtn">Set Name</button>
+    </section>
+
+    <section class="controls" aria-label="Greeting controls">
+      <button id="changeGreetingBtn">Change Greeting</button>
+      <button id="resetGreetingBtn">Back to Time Greeting</button>
+      <button id="toggleWelcomeBtn">Toggle Welcome Message</button>
+    </section>
+
+    <section>
+      <article id="welcomeMessage">
+        <h3>Welcome!</h3>
+        <p>Thanks for visiting. Explore our products, read our blog and enjoy your stay.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer><p class="note">Assignment 9 - Q1 (jQuery)</p></footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q1_welcome_greeting.js"></script>
+</body>
+</html>

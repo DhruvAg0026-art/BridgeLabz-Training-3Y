@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q2 - Product Highlight</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f6f6f6; margin: 0; }
+    header, main { max-width: 900px; margin: 0 auto; padding: 16px; }
+    .grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+    .product { background: #fff; border: 2px solid #ddd; border-radius: 10px; padding: 16px; cursor: pointer; position: relative; transition: background .2s; }
+    .product.highlight { background: #fff3b0; }
+    /* Attribute selector: products having a data-discount attribute */
+    .product[data-discount] { border-color: #2e9e4f; border-style: dashed; }
+    .product[data-discount]::before { content: "SALE " attr(data-discount) "% OFF"; position: absolute; top: -12px; left: 10px;
+      background: #2e9e4f; color: #fff; padding: 2px 8px; font-size: .75rem; border-radius: 4px; }
+    .details { display: none; margin-top: 10px; font-size: .9rem; color: #444; border-top: 1px solid #eee; padding-top: 8px; }
+    .fav { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #999; float: right; }
+    .fav.selected { color: #e0245e; }
+    .product.selected { box-shadow: 0 0 0 3px #e0245e55; }
+    .stock { font-size: .8rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Products</h1>
+    <p>Click a product to highlight it, hover for details, click the heart to favourite.</p>
+  </header>
+
+  <main>
+    <section aria-label="Product list">
+      <ul class="grid">
+        <li><article class="product" data-stock="10" data-discount="20">
+          <button class="fav" title="Favorite">&#9825;</button>
+          <h3>Wireless Headphones</h3><p>Rs. 2,999</p>
+          <div class="details">Bluetooth 5.0, 30 hrs battery, noise cancelling.</div>
+        </article></li>
+
+        <li><article class="product" data-stock="0">
+          <button class="fav" title="Favorite">&#9825;</button>
+          <h3>Smart Watch</h3><p>Rs. 4,499</p>
+          <div class="details">Heart-rate monitor, GPS, 7 day battery. (Out of stock)</div>
+        </article></li>
+
+        <li><article class="product" data-stock="5" data-discount="10">
+          <button class="fav" title="Favorite">&#9825;</button>
+          <h3>Backpack</h3><p>Rs. 1,299</p>
+          <div class="details">Water resistant, laptop compartment, 25L.</div>
+        </article></li>
+
+        <li><article class="product" data-stock="0" data-discount="35">
+          <button class="fav" title="Favorite">&#9825;</button>
+          <h3>Running Shoes</h3><p>Rs. 3,199</p>
+          <div class="details">Lightweight mesh, cushioned sole. (Out of stock)</div>
+        </article></li>
+
+        <li><article class="product" data-stock="25">
+          <button class="fav" title="Favorite">&#9825;</button>
+          <h3>Water Bottle</h3><p>Rs. 499</p>
+          <div class="details">Stainless steel, keeps drinks cold for 24 hrs.</div>
+        </article></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q2_product_highlight.js"></script>
+</body>
+</html>

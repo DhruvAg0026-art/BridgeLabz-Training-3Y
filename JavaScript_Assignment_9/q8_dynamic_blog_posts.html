@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q8 - Dynamic Blog Posts</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f3f5f7; margin: 0; }
+    header, main { max-width: 800px; margin: 0 auto; padding: 16px; }
+    .panel { background: #fff; padding: 14px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 14px; }
+    .row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; align-items: center; }
+    button { padding: 8px 14px; border: none; background: #00796b; color: #fff; border-radius: 6px; cursor: pointer; }
+    input, select { padding: 8px; border: 1px solid #999; border-radius: 6px; }
+    #postList { list-style: none; padding: 0; }
+    .post { background: #fff; border: 2px solid #ddd; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px; cursor: pointer; }
+    .post.selected { border-color: #00796b; }
+    .post.featured { border-left: 6px solid #f9a825; }
+    .post h3 { display: inline-block; margin: 0 6px 6px 0; }
+    .tag { display: inline-block; background: #e0f2f1; color: #004d40; padding: 2px 8px; border-radius: 10px; font-size: .8rem; margin-right: 4px; }
+    .keyword-hit { background: #fff59d; }
+    #status { color: #00695c; font-weight: bold; min-height: 1.2em; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog Admin Panel</h1>
+  </header>
+
+  <main>
+    <section class="panel" aria-label="Post actions">
+      <div class="row">
+        <button id="addPostBtn">Add New Post</button>
+        <button id="prependBtn">Prepend Featured Post</button>
+        <button id="removeLastBtn">Remove Last Post</button>
+      </div>
+      <div class="row">
+        <input type="text" id="tagInput" placeholder="Tag name">
+        <select id="placement">
+          <option value="before">Place tag BEFORE title</option>
+          <option value="after">Place tag AFTER title</option>
+        </select>
+        <button id="addTagBtn">Add Tag to Selected Post</button>
+      </div>
+      <div class="row">
+        <input type="text" id="keywordInput" placeholder="Keyword to highlight">
+        <button id="highlightBtn">Highlight</button>
+        <button id="clearHighlightBtn">Clear</button>
+      </div>
+      <p id="status" aria-live="polite"></p>
+    </section>
+
+    <section aria-label="Blog posts">
+      <p>Click a post to select it (needed for adding tags).</p>
+      <ul id="postList">
+        <li class="post"><article><h3>Getting Started with jQuery</h3><p>Learn selectors, events and effects.</p></article></li>
+        <li class="post"><article><h3>CSS Grid vs Flexbox</h3><p>When to use which layout system.</p></article></li>
+        <li class="post"><article><h3>JavaScript Closures Explained</h3><p>Understand scope and closures simply.</p></article></li>
+        <li class="post"><article><h3>10 Tips for Clean Code</h3><p>Write readable and maintainable code.</p></article></li>
+        <li class="post"><article><h3>Introduction to MySQL</h3><p>Tables, queries and joins for beginners.</p></article></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q8_dynamic_blog_posts.js"></script>
+</body>
+</html>

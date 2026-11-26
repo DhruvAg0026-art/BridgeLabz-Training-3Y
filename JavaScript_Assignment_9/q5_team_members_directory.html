@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q5 - Team Members Directory</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #eef1f5; margin: 0; }
+    header, main { max-width: 900px; margin: 0 auto; padding: 16px; }
+    .department { background: #fff; border-radius: 10px; margin-bottom: 16px; padding: 12px 16px; border: 1px solid #ddd; }
+    .dept-header { display: flex; justify-content: space-between; align-items: center; }
+    .dept-title { cursor: pointer; margin: 0; }
+    .members { list-style: none; padding: 0; margin: 10px 0 0; }
+    .member { padding: 8px 10px; border-radius: 6px; margin-bottom: 4px; }
+    .manager { font-weight: bold; background: #e3f2fd; cursor: pointer; }
+    .name { cursor: default; }
+    .contact { display: none; margin-left: 12px; font-size: .85rem; color: #555; font-weight: normal; }
+    .report-hl { background: #c8e6c9 !important; }
+    .sibling-hl { background: #ffe0b2 !important; }
+    .picked { background: #ffab91 !important; }
+    button { padding: 7px 14px; border: none; background: #00695c; color: #fff; border-radius: 6px; cursor: pointer; }
+    .hint { font-size: .85rem; color: #666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Team Members Directory</h1>
+    <p class="hint">Click manager (blue) = highlight reports | Hover a name = contact | Click department title = colour its members</p>
+    <button id="randomBtn">Select Random Employee</button>
+  </header>
+
+  <main>
+    <section class="department" data-dept="Engineering">
+      <header class="dept-header">
+        <h2 class="dept-title">Engineering</h2>
+        <button class="toggle-team">Collapse / Expand</button>
+      </header>
+      <ul class="members">
+        <li class="member manager" data-id="m1"><span class="name">Anita Sharma (Manager)</span><span class="contact">anita@company.com | 98100 00001</span></li>
+        <li class="member employee" data-manager="m1"><span class="name">Ravi Kumar</span><span class="contact">ravi@company.com | 98100 00002</span></li>
+        <li class="member employee" data-manager="m1"><span class="name">Sneha Patel</span><span class="contact">sneha@company.com | 98100 00003</span></li>
+        <li class="member employee" data-manager="m1"><span class="name">Karan Mehta</span><span class="contact">karan@company.com | 98100 00004</span></li>
+      </ul>
+    </section>
+
+    <section class="department" data-dept="Design">
+      <header class="dept-header">
+        <h2 class="dept-title">Design</h2>
+        <button class="toggle-team">Collapse / Expand</button>
+      </header>
+      <ul class="members">
+        <li class="member manager" data-id="m2"><span class="name">Vikram Singh (Manager)</span><span class="contact">vikram@company.com | 98100 00005</span></li>
+        <li class="member employee" data-manager="m2"><span class="name">Pooja Nair</span><span class="contact">pooja@company.com | 98100 00006</span></li>
+        <li class="member employee" data-manager="m2"><span class="name">Arjun Rao</span><span class="contact">arjun@company.com | 98100 00007</span></li>
+      </ul>
+    </section>
+
+    <section class="department" data-dept="Marketing">
+      <header class="dept-header">
+        <h2 class="dept-title">Marketing</h2>
+        <button class="toggle-team">Collapse / Expand</button>
+      </header>
+      <ul class="members">
+        <li class="member manager" data-id="m3"><span class="name">Divya Joshi (Manager)</span><span class="contact">divya@company.com | 98100 00008</span></li>
+        <li class="member employee" data-manager="m3"><span class="name">Manish Gupta</span><span class="contact">manish@company.com | 98100 00009</span></li>
+        <li class="member employee" data-manager="m3"><span class="name">Tina Das</span><span class="contact">tina@company.com | 98100 00010</span></li>
+        <li class="member employee" data-manager="m3"><span class="name">Rohit Verma</span><span class="contact">rohit@company.com | 98100 00011</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q5_team_members_directory.js"></script>
+</body>
+</html>

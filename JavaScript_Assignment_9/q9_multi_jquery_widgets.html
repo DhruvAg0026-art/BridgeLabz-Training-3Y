@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q9 - Multi jQuery Widgets</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #eceff1; margin: 0; }
+    header, main, footer { max-width: 900px; margin: 0 auto; padding: 16px; }
+    .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .widget { background: #fff; border: 3px solid transparent; border-radius: 10px; padding: 14px; cursor: pointer; }
+    .widget.active { border-color: #e65100; box-shadow: 0 0 10px rgba(230,81,0,.4); }
+    #carousel { position: relative; height: 90px; }
+    .carousel-slide { position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
+                      color: #fff; border-radius: 8px; font-size: 1.1rem; }
+    .carousel-slide:nth-child(1) { background: #5e35b1; } .carousel-slide:nth-child(2) { background: #00897b; }
+    .carousel-slide:nth-child(3) { background: #c62828; } .carousel-slide:nth-child(4) { background: #ef6c00; }
+    .carousel-slide:nth-child(5) { background: #1565c0; }
+    button { padding: 7px 12px; border: none; background: #37474f; color: #fff; border-radius: 6px; cursor: pointer; margin-top: 8px; }
+    .tooltip { position: absolute; background: #212121; color: #fff; padding: 5px 10px; border-radius: 4px; font-size: .8rem; z-index: 20; pointer-events: none; }
+    .help { text-decoration: underline dotted; cursor: help; }
+    #modalOverlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.55); align-items: center; justify-content: center; z-index: 10; }
+    #modalBox { background: #fff; padding: 24px; border-radius: 10px; width: 320px; }
+    .version { font-size: .85rem; color: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Multi-jQuery Dashboard</h1>
+    <p>Version 1 (jq1): carousel + active widget highlight. Version 2 (jq2): modal popups + tooltips.</p>
+  </header>
+
+  <main>
+    <section class="dashboard" aria-label="Widgets">
+      <article class="widget" data-widget="carousel">
+        <h2>Carousel Widget</h2>
+        <div id="carousel">
+          <div class="carousel-slide">Slide 1: Welcome</div>
+          <div class="carousel-slide">Slide 2: New Features</div>
+          <div class="carousel-slide">Slide 3: Top Offers</div>
+          <div class="carousel-slide">Slide 4: Events</div>
+          <div class="carousel-slide">Slide 5: Support</div>
+        </div>
+        <button id="prevBtn">Prev</button> <button id="nextBtn">Next</button>
+      </article>
+
+      <article class="widget" data-widget="notifications">
+        <h2>Notifications Widget</h2>
+        <p>You have <strong>3</strong> new alerts.</p>
+        <button id="openModalBtn">Show Notifications</button>
+      </article>
+
+      <article class="widget" data-widget="help">
+        <h2>Help Widget</h2>
+        <p>Hover over these for a tooltip:</p>
+        <p>
+          <span class="help" data-tip="Your account dashboard">Dashboard</span> |
+          <span class="help" data-tip="Change your settings">Settings</span> |
+          <span class="help" data-tip="Contact our support team">Support</span> |
+          <span class="help" data-tip="Read the documentation">Docs</span> |
+          <span class="help" data-tip="Sign out safely">Logout</span>
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p class="version" id="versionInfo"></p>
+  </footer>
+
+  <!-- Modal (controlled by jQuery version 2) -->
+  <div id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div id="modalBox">
+      <h2 id="modalTitle">Notifications</h2>
+      <ul>
+        <li>New message from Admin</li>
+        <li>Your report is ready</li>
+        <li>Server maintenance at 11 PM</li>
+      </ul>
+      <button id="closeModalBtn">Close</button>
+    </div>
+  </div>
+
+  <!--
+    5. jQuery.noConflict() setup so TWO versions of jQuery work together.
+    - First load jQuery 1.12.4, then call jQuery.noConflict(true) and store it in "jq1".
+      "true" removes BOTH the $ and jQuery globals and gives back what was there before.
+    - Then load jQuery 3.6.0 and store it in "jq2" in the same way.
+  -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>var jq1 = jQuery.noConflict(true);</script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>var jq2 = jQuery.noConflict(true);</script>
+
+  <script src="q9_multi_jquery_widgets.js"></script>
+</body>
+</html>

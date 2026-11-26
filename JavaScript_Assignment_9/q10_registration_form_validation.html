@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q10 - Registration Form Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #eef2f7; margin: 0; }
+    header, main { max-width: 450px; margin: 0 auto; padding: 16px; }
+    form { background: #fff; padding: 20px; border-radius: 10px; border: 1px solid #ddd; }
+    .field { margin-bottom: 14px; }
+    label { display: block; margin-bottom: 4px; font-weight: bold; }
+    input { width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #999; border-radius: 6px; }
+    .error { color: #c62828; font-size: .85rem; min-height: 1em; }
+    button { width: 100%; padding: 12px; border: none; background: #2e7d32; color: #fff; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+    #successMsg { display: none; background: #c8e6c9; color: #1b5e20; padding: 12px; border-radius: 6px; margin-top: 12px; }
+    .hint { font-size: .8rem; color: #666; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Create an Account</h1>
+    <p class="hint">Already registered emails (try them): admin@example.com, john@example.com, test@example.com, priya@example.com, rahul@example.com</p>
+  </header>
+
+  <main>
+    <section aria-label="Registration">
+      <form id="registerForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your full name">
+          <div class="error" id="nameError"></div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com">
+          <div class="error" id="emailError"></div>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Minimum 8 characters">
+          <div class="error" id="passwordError"></div>
+        </div>
+        <button type="submit">Register</button>
+        <div id="successMsg" role="status"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="q10_registration_form_validation.js"></script>
+</body>
+</html>
